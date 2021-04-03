@@ -1,4 +1,4 @@
-<h>Instrukcja:</h>
+<p><h>Instrukcja:</h></p>
 <h><b>control.py</b> </h>
 <p>jednolinijkowy plik z adresem tunelu, który jest pobierany do apki i arduino przez…</p>
 <h><b>url.txt</b> </h>
