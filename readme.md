@@ -1,8 +1,8 @@
 Instrukcja:
-* <b>control.py</b>
+* <b>control.py</b>\n
 działa na głównej malinie, co godzine odnawia tunel i przesyła dane do…
-* url.txt
+* <b>url.txt</b>
 jednolinijkowy plik z adresem tunelu, który jest pobierany do apki i arduino przez…
-* pars.py
+* <b>pars.py</b>
 zawiera funkcję, która parsuje i szczytuje linijkę z adresem strony
 reszta plików nie działa, albo je naprawię albo usunę
