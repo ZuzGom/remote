@@ -18,6 +18,6 @@ while True:
     process = subprocess.Popen(['git', 'commit', '-m','update'])
     process = subprocess.Popen(['git', 'push'])
     process = subprocess.Popen(['ssh', '-R', '80:192.168.55.8:80','pi@localhost.run'])
-    sleep(3660)
+    sleep(14400)
     process.terminate()
     
