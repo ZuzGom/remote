@@ -1,5 +1,6 @@
 Instrukcja:
-* <b>control.py</b>\n
+<h>* <b>control.py</b> </h>
+
 działa na głównej malinie, co godzine odnawia tunel i przesyła dane do…
 * <b>url.txt</b>
 jednolinijkowy plik z adresem tunelu, który jest pobierany do apki i arduino przez…
