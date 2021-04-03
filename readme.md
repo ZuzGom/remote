@@ -1,4 +1,4 @@
-Instrukcja:
+<h>Instrukcja:</h>
 *<h><b>control.py</b> </h>
 
 działa na głównej malinie, co godzine odnawia tunel i przesyła dane do…
