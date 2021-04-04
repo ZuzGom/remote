@@ -13,11 +13,12 @@ while True:
     f = open('url.txt','w')
     f.write(linia.split()[-1][:-4])
     f.close()
-    
+    sleep(5)
     process = subprocess.Popen(['git', 'add', 'url.txt'])
     process = subprocess.Popen(['git', 'commit', '-m','update'])
     process = subprocess.Popen(['git', 'push'])
     process.terminate()
+    sleep(5)
     process = subprocess.Popen(['ssh', '-R', '80:192.168.55.8:80','pi@localhost.run'])
     sleep(900)
     process.terminate()
