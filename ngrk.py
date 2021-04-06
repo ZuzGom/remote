@@ -1,37 +1,29 @@
 import subprocess
+import requests
+import json
 from time import sleep
 
-#result = subprocess.Popen(['ngrok','http','8000'], stdout=subprocess.PIPE)
-result=subprocess.Popen(['ngrok','http','8000'])
-p = subprocess.Popen(['ngrok','http','8000'], stdout=subprocess.PIPE, shell=True)
 
+while True:
+    ngrok = subprocess.Popen(['ngrok','tcp','3306'],stdout = subprocess.PIPE)
 
-#p = subprocess.Popen(['vprobe', '/vprobe/myhello.emt'], stdout=subprocess.PIPE,  buff, universal_newlines=True, preexec_fn=os.setsid)
-#process = subprocess.Popen(['ngrok','http','8000'],stdout=subprocess.PIPE)
-sleep(5)
-#result.terminate()
-p.kill()
-#print(result)
-#print(result.stdout)
-out, err = p.communicate()
-'''
+    localhost_url = "http://localhost:4040/api/tunnels" #Url with tunnel details
+    tunnel_url = requests.get(localhost_url).text #Get the tunnel information
+    j = json.loads(tunnel_url)
 
-command = "ngrok http 8000"  # the shell command
-process = subprocess.Popen(['ngrok','http','8000'], stdout=subprocess.PIPE, stderr=None, shell=True)
-sleep(15)
-#process = subprocess.Popen(['killall','ngrok'])
-process.terminate()
-#Launch the shell command:
-output = process.communicate()
-out = str(output[0]).split()
-#print (output[0])
-'''
-print(out)
-linia = str(out)
-#print(linia)
-f = open('guni.txt','w')
-f.write(linia.split()[-1][:-4])
-f.close()
-process = subprocess.Popen(['killall','ngrok'])
-#process = subprocess.Popen(['ngrok','http','8000'], input='')
-
+    wynik = j['tunnels'][0]['public_url'] #Do the parsing of the get
+    f = open('tcp.txt','w')
+    f.write(wynik)
+    f.close()
+    #wynik = tunnel_url["tunnels"]
+    print(wynik)
+    process = subprocess.Popen(['git', 'add', 'tcp.txt'])
+    sleep(2)
+    process = subprocess.Popen(['git', 'commit', '-m','update'])
+    sleep(1)
+    process = subprocess.Popen(['git', 'push'])
+    sleep(5)
+    process.terminate()
+    
+    sleep(900)
+    ngrok.terminate()
