@@ -1,1 +1,1 @@
-https://cd6baca482e3.ngrok.io
+tcp://4.tcp.ngrok.io:10410
