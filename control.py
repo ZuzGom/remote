@@ -3,7 +3,7 @@ from time import sleep
 
 while True:
     
-    process = subprocess.Popen(['ssh', '-R', '80:192.168.55.8:80','pi@localhost.run'],stdout=subprocess.PIPE)
+    process = subprocess.Popen(['ssh', '-R', '80:localhost:80','localhost.run'],stdout=subprocess.PIPE)
     sleep(5)
     
     process.terminate()
@@ -22,7 +22,7 @@ while True:
     sleep(5)
     process.terminate()
     
-    process = subprocess.Popen(['ssh', '-R', '80:192.168.55.8:80','pi@localhost.run'])
+    process = subprocess.Popen(['ssh', '-R', '80:localhost:80','localhost.run'])
     sleep(900)
     process.terminate()
     
